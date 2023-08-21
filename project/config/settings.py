@@ -37,9 +37,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_elasticsearch_dsl",
+    "search.apps.SearchConfig",
     "blog.apps.BlogConfig",
     "rest_framework",
     "silk",
+    "django_extensions",
 ]
 
 MIDDLEWARE = [
@@ -109,6 +112,13 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 100,
 }
 
+
+# Elasticsearch
+# https://django-elasticsearch-dsl.readthedocs.io/en/latest/settings.html
+
+ELASTICSEARCH_DSL = {
+    "default": {"hosts": "localhost:9200"},
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
